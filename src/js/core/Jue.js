@@ -8,6 +8,7 @@ export class Jue{
         this._data = options.data;
         this._init();
     }
+    // 初始化
     _init(){
         // 数据代理
         Object.keys(this._data).forEach(function (key) {
@@ -18,9 +19,7 @@ export class Jue{
         // 模板解析
         this.$compile = new Compile(this.$options.el || document.body, this)
     }
-    /*
-    * 数据代理
-    * */
+    // 数据代理
     _proxy(key) {
         Object.defineProperty(this, key, {
             configurable: false,
@@ -33,9 +32,7 @@ export class Jue{
             }
         });
     }
-    /*
-     * 封装的用于根据表达式获取model数据
-     * */
+    // 封装的用于根据表达式获取model数据
     getDataValueByExp(exp){
         let keys = exp.split('.');
         let val = this._data;
@@ -44,9 +41,7 @@ export class Jue{
         });
         return val;
     }
-    /*
-    * 封装的用于根据表达式设置model数据
-    * */
+    // 封装的用于根据表达式设置model数据
     setDataValueByExp(exp,newVal){
         let keys = exp.split('.');
         let val = this._data;

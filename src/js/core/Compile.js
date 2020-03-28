@@ -15,9 +15,7 @@ export class Compile{
             this.$el.appendChild(this.$fragment);
         }
     }
-    /*
-    * 解析元素节点
-    * */
+    // 解析元素节点
     _compileElementNode(el){
         let childNodes = el.childNodes;
             //me = this;
@@ -34,9 +32,7 @@ export class Compile{
             }
         },this);
     }
-    /*
-     * 解析属性节点
-     * */
+     // 解析属性节点
     _compileAttrNode(node){
         let nodeAttrs = node.attributes;
         [].slice.call(nodeAttrs).forEach(function(attr) {
@@ -53,9 +49,7 @@ export class Compile{
             }
         },this);
     }
-    /*
-     * 解析文本节点
-     * */
+     // 解析文本节点
     _compileTextNode(node,exp){
         DoubleBraceHandler.doubleBrace(node,exp,this.$vm)
     }

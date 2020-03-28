@@ -3,12 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        .class-test{
+            width: 200px;
+            height: 100px;
+            background-color: red;
+        }
+    </style>
 </head>
 <body>
 <div id="template">
-    <input type="text" j-model="msg">
     <p>{{msg}}</p>
+    <input type="text" j-model="modelShow">
+    <p>{{modelShow}}</p>
+    <div j-class="classTest">
+        <p>{{classShow}}</p>
+    </div>
     <button j-on:click="eventTest">eventTest</button>
+    <p>{{eventShow}}</p>
 </div>
 </body>
 </html>
